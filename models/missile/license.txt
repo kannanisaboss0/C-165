@@ -1,0 +1,11 @@
+Model Information:
+* title:	RA-7-Rocket
+* source:	https://sketchfab.com/3d-models/ra-7-rocket-4b49525aae1743aa857411e1d7750847
+* author:	Ronald_Reagan (https://sketchfab.com/Ronald_Reagan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "RA-7-Rocket" (https://sketchfab.com/3d-models/ra-7-rocket-4b49525aae1743aa857411e1d7750847) by Ronald_Reagan (https://sketchfab.com/Ronald_Reagan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

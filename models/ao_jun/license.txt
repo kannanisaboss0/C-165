@@ -1,0 +1,11 @@
+Model Information:
+* title:	[WR] Ao Jun
+* source:	https://sketchfab.com/3d-models/wr-ao-jun-856de51308e7407e951d7b6a0bae8b8b
+* author:	>corrupted ogre (https://sketchfab.com/corruptedogre)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "[WR] Ao Jun" (https://sketchfab.com/3d-models/wr-ao-jun-856de51308e7407e951d7b6a0bae8b8b) by >corrupted ogre (https://sketchfab.com/corruptedogre) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

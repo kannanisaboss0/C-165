@@ -1,0 +1,88 @@
+<!-------------------------------------------C-165----------------------------------------->
+<!------------------------------Molten Steel: The Rising Behemoth----------------------------------->
+
+<!--Doctype tag-->
+<!DOCTYPE>
+<!--Head tag-->
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="components/landing.js"></script>
+    <script src="components/movement_and_shooting.js"></script>
+    <script src="components/enemy_bullets.js"></script>
+</head>
+
+<!--Body tag-->
+<body>
+    <h1>Hello</h1>
+
+   <!--Scene tag--> 
+   <a-scene collide-detection-enemy landing-handler inspector-plugin-recast id="scene_wrld" physics>
+
+    <!--Asset tag-->
+    <a-assets>
+        <!--Audio tags-->
+        <audio id="walking_player" src="./sounds/robot_moving.mp3"></audio>
+        <audio id="shooting_player" src="./sounds/robot_shooting.mp3"></audio>
+
+        <!--Asset-item tags-->
+        <a-asset-item id="city_map" src="./models/map/scene.gltf"></a-asset-item>
+        <a-asset-item id="cockpit_player" src="./models/cockpit/scene.gltf"></a-asset-item>
+        <a-asset-item id="weapon_player" src="./models/rocket_launcher/scene.gltf"></a-asset-item>
+        <a-asset-item id="missile_player" src="./models/missile/scene.gltf"></a-asset-item>  
+        <a-asset-item  id="ao_jun_opponent" src="./models/ao_jun/scene.gltf"></a-asset-item>
+        <a-asset-item  id="ravana_opponent" src="./models/ao_jun/scene.gltf"></a-asset-item>
+        <a-asset-item id="turret_opponent" src="./models/turret/scene.gltf"></a-asset-item>
+
+    </a-assets>
+
+    <!--Cockpit tag-->
+     
+  <a-entity  velocity="0 1 0"  animation="property:position;to:0 3 -50;easing:linear;dur:40000"  id="cockpit_pl"  rotation="-45 0 0"  position="0 -3 0"  scale="0.0005 0.0005 0.0005" gltf-model="#cockpit_player" >
+    
+  </a-entity> 
+    
+    <!--Camera tag-->
+    <a-camera  static-body="shape:sphere;sphereRadius:0.72" update-movement-and-shoot  id="camera_pl" position="0 1000 -50" animation="property:position;to:0 3 -50;easing:linear;dur:40000" wasd-controls="acceleration:67">
+
+            <!--Text, Light and Weapon Tags (children of Camera)-->
+            
+        <a-entity id="altitude_tx" position="0 0 -3" text="value:1000;font:exo2bold;width:5;color:black;align:center"></a-entity>
+        <a-entity visible="false" id="loss_tx" position="0 2 -3" text="value:YOU LOST;font:exo2bold;width:25;color:black;align:center"></a-entity>
+        <a-box id="health_bar" color="green" depth="0.0053" height="0.03" width="0.8" position="0 0.15 -1"></a-box>
+        <a-entity position="0 2 0" light></a-entity>
+        <a-entity position="0 -2 0" light="color:orange"></a-entity>
+        <a-entity position="2 0 0" light="type:point"></a-entity>
+        <a-entity class="weapon_pl" position="-0.47 -0.2 -0.2"  id="weapon_pl_1" gltf-model="#weapon_player" rotation="0 180 0" scale="0.015 0.015 0.015"></a-entity>
+        <a-entity class="weapon_pl" position="0.47 -0.2 -0.2"  id="weapon_pl_2" gltf-model="#weapon_player" rotation="0 180 0" scale="0.015 0.015 0.015"></a-entity>
+        
+    </a-camera>  
+    
+    <!--Enemy tag-->
+    <a-entity static-body="shape:sphere;sphereRadius:3"  enemy-shoot id="ao_jun_opp" position="2 0 -75">
+        <a-box id="health_bar_opp" color="red" depth="0.0053" height="0.3" width="10" position="0 5 -1"></a-box>
+        <a-entity text="value:ENEMY;font:exo2bold;color:red;width:24;align:center" position="0 6 0"></a-entity>
+        <a-entity scale="0.2 0.2 0.2" gltf-model="#ao_jun_opponent" ></a-entity> 
+        <a-entity position="-0.65 3.35 0.5" rotation="0 90 0" scale="0.07 0.07 0.07" gltf-model="#turret_opponent"></a-entity>
+        <a-entity position="0.65 3.35 0.5" rotation="0 90 0" scale="0.07 0.07 0.07" gltf-model="#turret_opponent"></a-entity>
+    </a-entity>
+
+    <!--Beacon tag-->
+    <a-cylinder color="blue" position="-10 0 -200" radius="0.4" height="3000"></a-cylinder>
+    
+    <!--Sound tags-->
+    <a-entity id="walking_pl" sound="src:#walking_player;autoplay:true;poolSize:2,volume:4,loop:false"></a-entity>
+    <a-entity id="shooting_pl" sound="src:#shooting_player;autoplay:true,poolSize:2,volume:4,loop:false"></a-entity>    
+    <!--Sky tag-->
+   <a-sky radius="10000" src="./images/sky.jpeg"></a-sky>
+    
+    <!--Map tag-->
+    <a-entity   id="map_env"  scale="100 100 100" gltf-model="#city_map"></a-entity>
+   </a-scene> 
+</body>
+
+<!------------------------------Molten Steel: The Rising Behemoth----------------------------------->
+<!-------------------------------------------C-165----------------------------------------->
